@@ -1,0 +1,27 @@
+# We can keep two separate files for development and production to run the Spring Boot application
+
+# Following commands run in Terminal
+# java -jar target/RunnerLogExceptionApp-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+# java -jar target/RunnerLogExceptionApp-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
+
+spring:
+  application:
+    name: demoservice
+server:
+  port: 8080
+
+---
+spring:
+  profiles: dev
+  application:
+    name: devservice
+server:
+  port: 9090
+
+---
+spring:
+  profiles: prod
+  application:
+    name: prodservice
+server:
+  port: 4431
